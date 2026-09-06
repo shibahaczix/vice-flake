@@ -122,7 +122,7 @@
           nixosModules.default = { config, lib, pkgs, ... }:
             let
               cfg = config.programs.vice;
-              system = pkgs.system;
+              system = pkgs.stdenv.hostPlatform.system;
               vicePkg = self.packages.${system}.default;
             in
             {
