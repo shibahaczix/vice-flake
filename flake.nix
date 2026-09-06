@@ -154,13 +154,13 @@
                   description = "Vice game clip recorder daemon";
                   wantedBy = [ "graphical-session.target" "default.target" ];
                   after = [ "graphical-session.target" ];
+                  startLimitIntervalSec = 60;
+                  startLimitBurst = 3;
                   serviceConfig = {
                     Type = "simple";
                     ExecStart = "${vicePkg}/bin/vice start --no-open-ui";
                     Restart = "on-failure";
                     RestartSec = 3;
-                    StartLimitIntervalSec = 60;
-                    StartLimitBurst = 3;
                     PassEnvironment = [
                       "WAYLAND_DISPLAY"
                       "DISPLAY"
