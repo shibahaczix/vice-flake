@@ -6,7 +6,7 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
-  outputs = inputs@{ flake-parts, ... }:
+  outputs = inputs@{ self, flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" "aarch64-linux" ];
 
@@ -116,7 +116,6 @@
         };
 
       flake =
-        { self, ... }:
         {
           # NixOS module: installs the package + udev rule + an optional
           # systemd --user unit that mirrors packaging/vice.service upstream.
