@@ -12,7 +12,7 @@
 
       perSystem = { pkgs, ... }:
         let
-          pinnedVersion = "2.10.1";
+          pinnedVersion = "2.10.2";
           python = pkgs.python3;
 
           # Runtime tools Vice shells out to. These are NOT Python deps; they
@@ -41,7 +41,7 @@
               owner = "eklonofficial";
               repo = "Vice";
               rev = "v${version}";
-              hash = "sha256-9HWlcSZyWYwiaOu0WB0uYEV63K9FhpD3tQH1OnVxGwg=";
+              hash = "sha256-I6OQLNqKIfYeWAlBTnCumwKKcJS+4kb3cCPuluPXNSg=";
             };
 
             build-system = with python.pkgs; [ setuptools wheel ];
