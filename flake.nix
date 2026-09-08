@@ -159,7 +159,7 @@
                   serviceConfig = {
                     Type = "simple";
                     ExecStart = "${vicePkg}/bin/vice start --no-open-ui";
-                    Restart = "on-failure";
+                    Restart = "always";
                     RestartSec = 3;
                     PassEnvironment = [
                       "WAYLAND_DISPLAY"
